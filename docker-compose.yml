@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  ffmpeg_build:
+    build:
+      context: .
+      network: host
+    container_name: alpine
+    network_mode: host
+    volumes:
+      - ./dist:/dist
+    restart: unless-stopped
