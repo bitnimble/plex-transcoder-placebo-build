@@ -169,10 +169,10 @@ build_ffmpeg() {
     --enable-encoder=eac3_eae \
     --enable-libass \
     --prefix=/usr \
-    --extra-cflags="-m64 -static -O3 -fdata-sections -ffunction-sections -fno-omit-frame-pointer -g2 -gdwarf-4 -fcommon -flto=thin -fwhole-program-vtables -I${BUILD_DIR}/x264 -I${BUILD_DIR}/libass -I${BUILD_DIR}/nv-codec-headers/include/ffnvcodec -I${BUILD_DIR}/libplacebo/src/include -I${BUILD_DIR}/libplacebo/build/src/include -I/usr/include -I${BUILD_DIR}/zlib -I/usr/local/cuda/include -I/usr/include/vulkan -DUSING_STATIC_LIBICONV -DLIBXML_STATIC -DNDEBUG" && \
+    --extra-cflags="-m64 -static -O3 -fdata-sections -ffunction-sections -fno-omit-frame-pointer -g2 -gdwarf-4 -fcommon -flto=thin -fwhole-program-vtables -I${BUILD_DIR}/x264 -I${BUILD_DIR}/libass -I${BUILD_DIR}/nv-codec-headers/include/ffnvcodec -I${BUILD_DIR}/libplacebo/src/include -I${BUILD_DIR}/libplacebo/build/src/include -I/usr/include -I${BUILD_DIR}/zlib -I/usr/local/cuda/include -I/usr/include/vulkan -DLIBXML_STATIC -DNDEBUG" && \
   sed -i 's/HAVE_SYSCTL 1/HAVE_SYSCTL 0/g' config.h && \
   ffbuild/version.sh $(pwd) libavutil/ffversion.h && \
-  sed -i "s/N-105289-g2b053cf9a9/fb9eae3-4185/g" libavutil/ffversion.h && \
+  sed -i "s/N-105289-g2b053cf9a9/62cc2bc-4278/g" libavutil/ffversion.h && \
   make -j${threads} V=s > build.log && \
   cp -t /build ffmpeg_g libavformat/libavformat.so.58 libavutil/libavutil.so.56 libswscale/libswscale.so.5 libswresample/libswresample.so.3
 }
